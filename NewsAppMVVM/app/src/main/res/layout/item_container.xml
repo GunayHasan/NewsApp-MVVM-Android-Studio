@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data> 
+        <variable
+            name="news"
+            type="com.gnyapp.newsapp_mvvm.models.NewsModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="@dimen/_4sdp"
+        android:padding="@dimen/_10sdp">>
+        
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:imageURL="@{news.urlToImage}"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{news.title}"
+            android:padding="@dimen/_4sdp"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:text="@{news.description}"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/white"
+            android:layout_gravity="bottom"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:id="@+id/tvSource" />
+
+    </androidx.cardview.widget.CardView>
+</layout>
